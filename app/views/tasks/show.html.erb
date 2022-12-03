@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>タスク名:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>詳細:</strong>
+  <%= @task.detail %>
+</p>
+
+<p>
+  <strong>完了:</strong>
+  <%= @task.completed %>
+</p>
+
+<%= link_to 'タスク一覧へ戻る', tasks_path %>
+<%= link_to '編集', edit_task_path(@task) %>
+<%= link_to '削除', @task, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+
+<style>
+    p {
+        margin-bottom: 1em;
+    }
+    strong {
+        display: inline-block;
+        width: 10em;
+    }
+</style>
